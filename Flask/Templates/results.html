@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Disease Prediction - Results</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #2596be, rgb(37, 150, 190));
+      color: white;
+      text-align: center;
+      font-family: 'Open Sans', sans-serif;
+      padding: 20px;
+      position: relative;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100vh;
+    }
+
+    .content {
+      width: 60%;
+      text-align: left;
+      position: relative;
+    }
+
+    .header {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .result-heading {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .result-message {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    .image-container {
+      max-width: 35%;
+      height: auto;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-top: 30px;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    button {
+      background-color: #ffffff;
+      color: #2596be;
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      cursor: pointer;
+      border-radius: 20px;
+      transition: background-color 0.3s, color 0.3s;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #2596be;
+      color: #ffffff;
+    }
+
+    .contact-button {
+      background-color: #ffffff;
+      color: #2596be;
+      padding: 10px 15px;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+      border-radius: 10px;
+      transition: background-color 0.3s, color 0.3s;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+
+    .contact-button:hover {
+      background-color: #2596be;
+      color: #ffffff;
+    }
+
+    #contact-modal {
+      position: absolute;
+      top: 70px;
+      left: 10px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      padding: 10px;
+      display: none;
+    }
+
+    #contact-modal button {
+      margin: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="content">
+      <button class="contact-button" onclick="toggleContacts()">Contact Us</button>
+      <div id="contact-modal">
+        <p>Contact Us:</p>
+        <button onclick="location.href='https://www.linkedin.com/in/uday-suggula-51b614261/'">Uday</button>
+        <button onclick="location.href='https://www.linkedin.com/in/harshit-bogineni-b0b481220/'">Harshit</button>
+      </div>
+
+      <div class="header">
+        <h2>Disease Prediction</h2>
+      </div>
+
+      <div class="result-heading">Result</div>
+      <div class="result-message">
+        <p>The potential diagnosis indicates a possibility of: <span id="predicted-value">{{ predictedValue  }}</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="image-container">
+      <img src="https://img.freepik.com/free-vector/flat-online-medical-conference-illustration_23-2148901289.jpg?w=996&t=st=1700319864~exp=1700320464~hmac=762536b4a34e565bf2e90e2b1a3701ac63efd13775339ca1dfaf7bf89df58870"
+        alt="Medical Illustration">
+    </div>
+  </div>
+
+  <script>
+    function toggleContacts() {
+      var modal = document.getElementById('contact-modal');
+      modal.style.display = modal.style.display === 'none' ? 'block' : 'none';
+    }
+
+  </script>
+
+</body>
+
+</html>

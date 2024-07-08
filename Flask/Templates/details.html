@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Disease Prediction - Details</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #2596be, rgb(37, 150, 190));
+      color: white;
+      text-align: center;
+      font-family: 'Open Sans', sans-serif;
+      padding: 20px;
+    }
+
+    .container {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      min-height: 100vh;
+    }
+
+    .content {
+      width: 60%;
+      text-align: left;
+    }
+
+    .header {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .description {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    .symptom-lists {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .symptom-list {
+      list-style-type: none;
+      padding: 10px;
+      columns: 3;
+      -webkit-columns: 3;
+      -moz-columns: 3;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+    }
+
+    .symptom-list li {
+      margin-bottom: 8px;
+      list-style: none;
+    }
+
+    form {
+      margin-top: 30px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input {
+      width: calc(100% - 22px);
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-sizing: border-box;
+      display: inline-block;
+    }
+
+    .symptom-box {
+      width: 32%;
+      display: inline-block;
+      margin-right: 2%;
+    }
+
+    button {
+      background-color: #2596be;
+      color: #ffffff;
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      cursor: pointer;
+      border-radius: 20px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    button:hover {
+      background-color: #ffffff;
+      color: #2596be;
+    }
+
+    .image-container {
+      max-width: 35%;
+      height: auto;
+      margin-top: 50px;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="content">
+      <div class="header">
+        <h2>Disease Prediction</h2>
+      </div>
+
+      <div class="description">
+        <p>You'll find six boxes to enter your symptoms. Fill in the number of symptoms you have and leave the remaining boxes blank.</p>
+        <p>Choose your symptoms from the lists below:</p>
+      </div>
+
+      <div class="symptom-lists">
+        <ul class="symptom-list">
+            <li>⦿ nausea</li>
+            <li>⦿ abdominal_pain</li>
+            <li>⦿ vomiting</li>
+            <li>⦿ constipation</li>
+            <li>⦿ phlegm</li>
+            <li>⦿ blood_in_sputum</li>
+            <li>⦿ cough</li>
+            <li>⦿ weight_loss</li>
+            <li>⦿ fatigue</li>
+            <li>⦿ malaise</li>
+            <li>⦿ high_fever</li>
+            <li>⦿ mild_fever</li>
+            <li>⦿ lethargy</li>
+            <li>⦿ depression</li>
+            <li>⦿ irritability</li>
+            <li>⦿ chills</li>
+            <li>⦿ restlessness</li>
+            <li>⦿ skin_peeling</li>
+            <li>⦿ blister</li>
+            <li>⦿ red_spots_over_body</li>
+            <li>⦿ dark_urine</li>
+            <li>⦿ dischromic_patches</li>
+            <li>⦿ fast_heart_rate</li>
+            <li>⦿ muscle_pain</li>
+            <li>⦿ muscle_weakness</li>
+            <li>⦿ movement_stiffness</li>
+            <li>⦿ knee_pain</li>
+            <li>⦿ back_pain</li>
+            <li>⦿ swelling_joints</li>
+            <li>⦿ weakness_of_one_body_side</li>
+            <li>⦿ neck_pain</li>
+            <li>⦿ joint_pain</li>
+            <li>⦿ yellowing_of_eyes</li>
+            <li>⦿ pain_behind_the_eyes</li>
+            <li>⦿ visual_disturbances</li>
+            <li>⦿ passage_of_gases</li>
+            <li>⦿ irregular_sugar_level</li>
+            <li>⦿ weight_gain</li>
+            <li>⦿ acute_liver_failure</li>
+            <li>⦿ throat_irritation</li>
+            <li>⦿ headache</li>
+            <li>⦿ swelling_of_stomach</li>
+            <li>⦿ swelled_lymph_nodes</li>
+            <li>⦿ loss_of_appetite</li>
+            <li>⦿ spinning_movements</li>
+            <li>⦿ obesity</li>
+            <li>⦿ loss_of_balance</li>
+            <li>⦿ lack_of_concentration</li>
+            <li>⦿ indigestion</li>
+            <li>⦿ toxic_look_(typhos)</li>
+            <li>⦿ sweating</li>          
+        </ul>
+      </div>
+
+      <form action='/predict' method="post">
+        <div class="symptom-box">
+          <label for="s1">Symptom-1</label>
+          <input id="s1" name="Symptom1" placeholder="Type your symptom here" type="text">
+        </div>
+
+        <div class="symptom-box">
+          <label for="s2">Symptom-2</label>
+          <input id="s2" name="Symptom2" placeholder="Type your symptom here" type="text">
+        </div>
+
+        <div class="symptom-box">
+          <label for="s3">Symptom-3</label>
+          <input id="s3" name="Symptom3" placeholder="Type your symptom here" type="text">
+        </div>
+
+        <!-- Three new boxes for symptoms 4, 5, and 6 -->
+        <div class="symptom-box">
+          <label for="s4">Symptom-4</label>
+          <input id="s4" name="Symptom4" placeholder="Type your symptom here" type="text">
+        </div>
+
+        <div class="symptom-box">
+          <label for="s5">Symptom-5</label>
+          <input id="s5" name="Symptom5" placeholder="Type your symptom here" type="text">
+        </div>
+
+        <div class="symptom-box">
+          <label for="s6">Symptom-6</label>
+          <input id="s6" name="Symptom6" placeholder="Type your symptom here" type="text">
+        </div>
+
+        <button type="submit">Predict</button>
+      </form>
+
+      <!-- Added space below the Predict button -->
+      <div style="margin-bottom: 50px;"></div>
+    </div>
+
+    <div class="image-container">
+      <img src="https://img.freepik.com/free-vector/online-doctor-concept_52683-37473.jpg?w=740&t=st=1700486303~exp=1700486903~hmac=c7c6310abc6d7f55cb991f028b97e407c8e06aaeee273ff00d25078a9e704636"
+        alt="Medical Illustration">
+    </div>
+  </div>
+
+</body>
+
+</html>

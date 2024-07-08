@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Disease Prediction</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #2596be, rgb(37, 150, 190));
+      color: white;
+      text-align: center;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    .container {
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100vh;
+    }
+
+    .content {
+      width: 45%;
+      text-align: left;
+    }
+
+    .header {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .middle-content {
+      font-size: 20px; /* Decreased font size */
+      margin: 20px 0;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .contact-button,
+    .prediction-button {
+      background-color: #ffffff;
+      color: #2596be;
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      cursor: pointer;
+      border-radius: 20px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .contact-button:hover,
+    .prediction-button:hover {
+      background-color: #2596be;
+      color: #ffffff;
+    }
+
+    .container img {
+      max-width: 45%;
+      height: auto;
+      border-radius: 20px;
+      margin-left: 20px;
+    }
+
+    #contact {
+      display: none;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: #ffffff;
+      padding: 10px;
+      border-radius: 10px;
+      text-align: left;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="content">
+      <div class="header">
+        <h1>Disease Prediction</h1>
+      </div>
+
+      <div class="middle-content">
+        <p>Welcome to our disease prediction model using machine learning</p>
+        <p>We'll help you predict which disease you might have by considering the symptoms you share with us.</p>
+      </div>
+
+      <div class="button-container">
+        <button class="prediction-button" onclick="redirectToDetails()">Predict</button>
+        <button class="contact-button" onclick="showContact()">Contact Us</button>
+      </div>
+
+      <div id="contact">
+        <p>Contact Us:</p>
+        <p><a href="https://www.linkedin.com/in/uday-suggula-51b614261/" target="_blank">Uday</a></p>
+        <p><a href="https://www.linkedin.com/in/harshit-bogineni-b0b481220/" target="_blank">Harshit</a></p>
+      </div>
+    </div>
+
+    <img src="https://img.freepik.com/free-vector/online-doctor-concept_23-2148525671.jpg?size=626&ext=jpg&ga=GA1.1.775998730.1700315391&semt=ais"
+      alt="Healthcare Image">
+  </div>
+
+  <script>
+    function showContact() {
+      var contactDiv = document.getElementById("contact");
+      if (contactDiv.style.display === "none") {
+        contactDiv.style.display = "block";
+      } else {
+        contactDiv.style.display = "none";
+      }
+    }
+
+    function redirectToDetails() {
+    // Redirect to the details page
+    window.location.href = '/details';
+  }
+  </script>
+
+</body>
+
+</html>
